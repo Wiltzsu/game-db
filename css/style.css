@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Noto+Sans&display=swap');
+
+body {
+    background: rgb(178,187,187);
+    background: radial-gradient(circle, rgba(178,187,187,1) 0%, rgba(121,140,140,1) 100%); 
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+.tabletext {
+    font-family: 'Kanit', sans-serif;
+}
+
+.smallogo {
+    height: 50px;
+    width: 50px;
+}
+
+.container {
+    background-color: rgb(233, 232, 233);
+}
+
+.searchcontainer {
+    background-color: #835b80;
+}
+
+.purplecontainer {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+.orangecontainer1 {
+    color: #ffffff;
+    background-color: #33006F;
+    border-radius: 10px 0px 0px 10px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400!important;
+    border-bottom: 4px solid;
+    border-left: 4px solid;
+    animation: color-transition 10s infinite;
+}
+
+@keyframes color-transition {
+    0% {
+      border-color: #5e0852;
+    }
+    50% {
+      border-color: #4258bd;
+    }
+    100% {
+      border-color: #5e0852;
+    }
+}
+
+.form-check-label {
+color: black;
+}
+
+.orangecontainer2 {
+    color: rgb(255, 255, 255);
+    background-color: #33006F;
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    border-bottom: 4px solid #8a0b79;
+    border-left: 4px solid #4258bd;
+    border-right: 4px solid #4258bd;
+
+    animation: color-transition2 10s infinite;
+}
+
+@keyframes color-transition2 {
+    0% {
+      border-color: #4258bd;
+    }
+    50% {
+      border-color: #8a0b79;
+    }
+    100% {
+      border-color: #4258bd;
+    }
+}
+.orangecontainer3 {
+    color: rgb(255, 255, 255);
+    background-color: #33006F;
+    border-radius: 0px 10px 10px 0px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    border-bottom: 4px solid #8a0b79;
+    border-right: 4px solid #4258bd;
+    animation: color-transition 10s infinite;
+}
+
+.transpcontainer {
+    background-color: black;
+}
+
+.tableborders {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search {
+    justify-content: center;
+    text-align: center;
+}
+/*
+table {
+    background-color: #230a4d;
+  }
+
+  table.table tbody tr:nth-child(even) {
+    background-color: #674279;
+  }
+  table.table td, table.table th {
+    color: #000000;
+  }*/
+
+.footerimg {
+    width: 19em;
+    height: 6em;
+}
+
+.modal-title {
+  color: black;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+ }
+ :-moz-placeholder {
+    font-style: italic;  
+ }
+ ::-moz-placeholder {
+    font-style: italic;  
+ }
+ :-ms-input-placeholder {  
+    font-style: italic; 
+ }
+ 
+ .wider-row td {
+    width: 50%; /* adjust the width as needed */
+}
+
+  .form-control::placeholder {
+    font-style: italic;
+}
