@@ -54,7 +54,7 @@ if (isset($_POST['laheta'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>gamersOut</title>
+    <title>gamersOut - Game release dates</title>
     <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
@@ -107,10 +107,10 @@ if (isset($_POST['laheta'])) {
         <h3>Edit game</h3>
             <!-- Display error message -->
             <form action="updategame.php" method="GET">
-                <label>Game title:</label>
-                <input id="search-input" type="text" name="title" style="display: inline-block;" class="form-control col-6">
+                <label>Search by game title: </label>
+                <input id="search-input" type="text" name="title" style="display: inline-block;" class="form-control">
                 <div id="suggestions"></div>
-                <button type="submit" class="btn btn-warning">Search game</button><br><br>
+                <button type="submit" class="btn btn-warning mt-2">Search</button><br><br>
             </form>
         </div>
     </div>

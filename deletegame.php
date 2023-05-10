@@ -17,6 +17,6 @@ else if(isset($_POST['usergameid'])) {
     $poista->execute();
 }
 
-header("location: admin.php");
+header("location: admin.php?usergamedeleted=true");
 
 ?>

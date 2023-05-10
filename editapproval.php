@@ -3,7 +3,7 @@
 require "connect.php";
 session_start();
 
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION['adminemail'])){
     header("Location: login.php");
     exit;
 }
@@ -11,9 +11,6 @@ if(!isset($_SESSION['email'])){
 try {
     // Uses superglobal $_GET to retrieve the value of "usergameid" parameter passed in the URL
     $usergameid = $_GET['usergameid'];
- 
-    // Print to screen, debugging statement
-    echo "<br>usergameid: $usergameid<br>";
 
     // Search database for usergameid in usergames table
     $kysely = "SELECT * FROM usergames WHERE usergameid = '$usergameid'";
@@ -57,7 +54,7 @@ try {
             $yhteys->exec($kysely);
 
             // Redirect to index.php
-            header('Location: admin.php');
+            header('Location: useraddedgames.php?usergameedited=true');
             exit();
         }
     } else {
@@ -71,30 +68,93 @@ try {
 
 ?>
 
-<div class="container mt-5 p-3">
-    <div class="row">
-        <div class="col">
-            <h2>Päivitä tietoja</h2>
-            <a href="admin.php">Takaisin listaan</a>
-            <form method="POST" action="editapproval.php?usergameid=<?php echo $usergameid; ?>" class="form-inline">
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">Uusi etunimi</label>
-                    <input name="new_title" type="text" class="form-control" id="inputPassword2" placeholder="Title" value="<?php echo $usergame_title ; ?>">
-                </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">Uusi sukunimi</label>
-                    <input name="new_releasedate" type="text" class="form-control" id="inputPassword2" placeholder="Release date" value="<?php echo $usergame_release ; ?>">
-                </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">Uusi sähköposti</label>
-                    <input name="new_developer" type="text" class="form-control" id="inputPassword2" placeholder="Developer" value="<?php echo $usergame_developer ; ?>">
-                </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">Uusi puhelin</label>
-                    <input name="new_platform" type="text" class="form-control" id="inputPassword2" placeholder="Platform" value="<?php echo $usergame_platform ; ?>">
-                </div>
-                <button name="laheta" type="submit" class="btn btn-primary mb-2">Update</button>
-            </form>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>gamersOut - Game release dates</title>
+    <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LczX54lAAAAAFbt65LDoTrH7ZBHqmJS60Z1mn9W"></script>
+    <script src="./javascript/javascript.js"></script>
+    <script src="./javascript/bootstrap.bundle.js"></script>
+    <script src="./javascript/bootstrap.min.js"></script>
+
+    <body>
+    <div class="container tableborders">
+        <div class="row">
+            <div class="col-sm-12 purplecontainer pl-5 pr-5 pb-4"> 
+            <img src="img/gamersout3.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+
+        <div class="row pl-3" style="background-color:black">
+        <!-- Checks if session is active and shows the control panel if it is -->
+        <?php if(isset($_SESSION['adminemail'])) { ?>
+                <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
+            <?php } ?>
         </div>
     </div>
-</div>
+
+
+    <div class="container p-3">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Edit game specx</h2>
+                    <form method="POST" action="editapproval.php?usergameid=<?php echo $usergameid; ?>" class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputPassword2" class="sr-only">Give me a new title</label>
+                            <input name="new_title" type="text" class="form-control" id="inputPassword2" placeholder="Title" value="<?php echo $usergame_title ; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputPassword2" class="sr-only">And a new release date</label>
+                            <input name="new_releasedate" type="date" class="form-control" id="inputPassword2" placeholder="Release date" value="<?php echo $usergame_release ; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputPassword2" class="sr-only">How about the developer?</label>
+                            <input name="new_developer" type="text" class="form-control" id="inputPassword2" placeholder="Developer" value="<?php echo $usergame_developer ; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputPassword2" class="sr-only">And the platforms</label>
+                            <input name="new_platform" type="text" class="form-control" id="inputPassword2" placeholder="Platform" value="<?php echo $usergame_platform ; ?>">
+                            <button name="laheta" type="submit" class="btn btn-primary mb-2 mt-2">Go!</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!--FOOTER-->
+        <div class="container tableborders">
+        <div class="row">
+            <div class="col-sm-12 purplecontainer text-center">
+            <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 purplecontainer text-center" style="color: white">
+            <p>contact@gamersout.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 purplecontainer text-center" style="color: white">
+            <p>Copyright 2022 © gamersout.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-1GhqOgQlVoZvH8wGpFYiKlLVzL81sUSsDdW1lG2aiTUvx3cXvC9yhE8nsRnlCpwR" crossorigin="anonymous"></script>
+  </body>
+</html>
