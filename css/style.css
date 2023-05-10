@@ -149,3 +149,12 @@ table {
   .form-control::placeholder {
     font-style: italic;
 }
+
+#sieni {
+  width: 420px;
+  height: 220px;
+}
+
+a {
+  text-decoration: none;
+}

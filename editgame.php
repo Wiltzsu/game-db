@@ -95,7 +95,7 @@ if (isset($_POST['laheta'])) {
         <div class="row pl-3" style="background-color:black">
         <!-- Checks if session is active and shows the control panel if it is -->
         <?php if(isset($_SESSION['adminemail'])) { ?>
-                <p><a href="admin.php">Back to admin panel</a> <a href="logout.php">Logout</a></p>
+                <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
             <?php } ?>
         </div>
     </div>

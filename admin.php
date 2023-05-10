@@ -38,18 +38,45 @@ if(!isset($_SESSION['adminemail'])){
 <div class="container">
 
     <div class="row">
-        <p><a href="index.php">Back to front page</a> <a href="logout.php">Logout</a></p>
+        <p><a href="index.php">FRONT PAGE</a> - <a href="logout.php">LOGOUT</a></p>
+    </div>
+
+    <div class="row text-center pb-3">
+        <div class="col-sm-12">
+        <!-- Alert if game edit is successful, gets the value from updategame.php -->
+        <?php if(isset($_GET['success'])): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Game edited!</strong> Nice admin work.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+        <!-- Alert if game delete is successful, gets the value from updategame.php -->
+        <?php if(isset($_GET['delete'])): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Game deleted!</strong> Good admin.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+            <h2>Welcome to the Admin panel!</h2>
+        </div>
+
+    </div>
+
+    <div class="row text-center pb-3">
+        <div class="col-sm-4">
+            <p><a class="btn btn-danger btn-lg" href="addgame.php">Add game</a></p>
+        </div>
+        <div class="col-sm-4">
+            <p><a class="btn btn-danger btn-lg" href="editgame.php">Edit game</a></p>
+        </div>
+        <div class="col-sm-4">
+            <p><a class="btn btn-danger btn-lg" href="useraddedgames.php">User added games</a></p>
+        </div>
     </div>
 
     <div class="row text-center">
-        <div class="col-sm-4">
-            <p><a class="btn btn-primary btn-large" href="addgame.php">Add game</a></p>
-        </div>
-        <div class="col-sm-4">
-            <p><a class="btn btn-primary btn-large" href="editgame.php">Edit game</a></p>
-        </div>
-        <div class="col-sm-4">
-            <p><a class="btn btn-primary btn-large" href="useraddedgames.php">User added games</a></p>
+        <div class="col-sm-12">
+        <img src="img/sieni-nobg.png" id="sieni" class="mx-auto">
         </div>
     </div>
 

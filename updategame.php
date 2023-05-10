@@ -7,26 +7,53 @@ error_reporting(E_ALL);
 ?>
 
 <?php
-
-
-if (isset($_POST['laheta'])) {
-    $new_reknro = $_POST['title'];
-    $new_valmistaja = $_POST['releasedate'];
-    $new_malli = $_POST['developer'];
-    $new_hinta = $_POST['platform'];
-
-    $query = "UPDATE games SET title = '$new_reknro', releasedate = '$new_valmistaja', developer = '$new_malli', platform = '$new_hinta' WHERE title = '$title'";
-    $yhteys->exec($query);
-
-    header('Location: admin.php');
-    exit();
-} else if (isset($_POST['poista'])) {
+try {
     $title = $_GET['title'];
-    $query = "DELETE FROM games WHERE title = :title";
-    $poista = $yhteys->prepare($query);
-    $poista->bindValue(':title', $title, PDO::PARAM_STR);
-    $poista->execute();
+
+    $query = "SELECT * FROM games WHERE title = '$title'";
+    $data = $yhteys->query($query);
+    $rows = $data->fetch(PDO::FETCH_OBJ);
+
+    if ($rows) {
+        $current_title = $rows->title;
+        $current_releasedate = $rows->releasedate;
+        $current_developer = $rows->developer;
+        $current_platform = $rows->platform;
+
+        if (isset($_POST['laheta'])) {
+            $new_title = $_POST['title'];
+            $new_releasedate = $_POST['releasedate'];
+            $new_developer = $_POST['developer'];
+            $new_platform = $_POST['platform'];
+
+            // Update values in database
+            $update = "UPDATE games
+            SET title = '$new_title', releasedate = '$new_releasedate', developer = '$new_developer', platform = '$new_platform'
+            WHERE title = '$title'";
+ 
+            $yhteys->exec($update);
+            header('Location: admin.php?success=true');
+            exit();
+        } else if (isset($_POST['poista'])) {
+            $new_title = $_POST['title'];
+            $new_releasedate = $_POST['releasedate'];
+            $new_developer = $_POST['developer'];
+            $new_platform = $_POST['platform'];
+
+            // Delete from database
+            $delete = "DELETE FROM games WHERE title = '$title'";
+
+            $yhteys->exec($delete);
+            header('Location: admin.php?delete=true');
+            exit();
+        }
+    } else {
+        throw new Exception("<h4 style='color:red'>Could not find game</h4>");
+    }
+} catch (Exception $e) {
+    echo $e->getMessage();
 }
+
 ?>
 
 <!doctype html>
