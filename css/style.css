@@ -158,3 +158,18 @@ table {
 a {
   text-decoration: none;
 }
+
+.tableheader1 {
+  background-color: #33006F!important;
+  border-radius: 10px 0 0 0;
+  color: white!important;
+}
+.tableheader2 {
+  background-color: #33006F!important;
+  color: white!important;
+}
+.tableheader3 {
+  background-color: #33006F!important;
+  border-radius: 0px 10px 0 0;
+  color: white!important;
+}

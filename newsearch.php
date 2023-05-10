@@ -3,15 +3,15 @@ require "connect.php";
 
 $error_message = '';
 
-if (isset($_GET['searchtitle'])) {
-    $searchtitle = $_GET['searchtitle'];
-    if ((empty($searchtitle)) || ($searchtitle == ' ')) {
+if (isset($_GET['title'])) {
+    $title = $_GET['title'];
+    if ((empty($title)) || ($title == ' ')) {
         $error_message = 'Please enter a search term.';
     } else {
         try {
-            $query = "SELECT * FROM games WHERE title LIKE :searchtitle";
+            $query = "SELECT * FROM games WHERE title LIKE :title";
             $stmt = $yhteys->prepare($query);
-            $stmt->bindValue(':searchtitle', '%'.$searchtitle.'%', PDO::PARAM_STR);
+            $stmt->bindValue(':title', '%'.$title.'%', PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
 

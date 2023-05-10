@@ -25,6 +25,6 @@ if(isset($_GET['usergameid'])) {
     $del->execute();
 }
 
-header("location: admin.php");
+header("location: admin.php?usergameadded=true");
 
 ?>

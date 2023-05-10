@@ -154,7 +154,7 @@ error_reporting(E_ALL);
     <div class="col-sm-4">
       <form id="search-form">
         <div class="input-group">
-          <input type="text" name="searchtitle" class="form-control" placeholder="Search by title">
+          <input type="text" name="title" class="form-control" placeholder="Search by title">
           <span class="input-group-addon">
             <button type="submit" class="btn btn-primary">Search</button>
           </span>
@@ -166,12 +166,12 @@ error_reporting(E_ALL);
 
   <div class="row">
     <div class="table-responsive">
-      <table class="table table-striped">
+      <table class="table table-striped ">
         <tr>
-          <th class="col-4">Title</th>
-          <th class="col-2">Release date</th>
-          <th class="col-3">Developer</th>
-          <th class="col-3">Platform</th>
+          <th class="col-4 tableheader1">Title</th>
+          <th class="col-2 tableheader2">Release date</th>
+          <th class="col-3 tableheader2">Developer</th>
+          <th class="col-3 tableheader3">Platform</th>
         </tr>
         <?php
         // Check if file exists and readable
