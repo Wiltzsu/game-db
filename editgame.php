@@ -110,12 +110,6 @@ if (isset($_POST['laheta'])) {
                 <label>Game title:</label>
                 <input type="text" name="title" style="display: inline-block;" class="form-control col-6">
                 <button type="submit" class="btn btn-warning">Search game</button><br><br>
-                <?php 
-                    if (isset($_GET['title']) && empty($_GET['title'])) {
-                        $error_message = "Input is empty";
-                        echo $error_message;
-                    }
-                ?>
             </form>
         </div>
     </div>

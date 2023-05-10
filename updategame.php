@@ -89,7 +89,7 @@ if (isset($_POST['laheta'])) {
                 $error_message = '';
 
                 if (isset($_GET['title']) && empty($_GET['title'])) {
-                    $error_message = "Input is empty";
+                    $error_message = "<p style='color:red'>Input is empty</p>";
                     echo $error_message;
                 } else {
                     try {
