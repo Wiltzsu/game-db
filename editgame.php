@@ -108,7 +108,8 @@ if (isset($_POST['laheta'])) {
             <!-- Display error message -->
             <form action="updategame.php" method="GET">
                 <label>Game title:</label>
-                <input type="text" name="title" style="display: inline-block;" class="form-control col-6">
+                <input id="search-input" type="text" name="title" style="display: inline-block;" class="form-control col-6">
+                <div id="suggestions"></div>
                 <button type="submit" class="btn btn-warning">Search game</button><br><br>
             </form>
         </div>

@@ -20,6 +20,7 @@ $(document).ready(function() {
     
   });
 
+// Function to get a random game
 function getRandomGame() {
     var xmlhttp = new XMLHttpRequest();
 
@@ -35,4 +36,37 @@ function getRandomGame() {
     xmlhttp.send();
 }
 
+// Input suggestions in admin panel
 
+const searchInput = document.getElementById('search-input');
+const suggestionsDiv = document.getElementById('suggestions');
+
+searchInput.addEventListener('input', function() {
+  const searchTerm = searchInput.value;
+  
+  // Send AJAX request to PHP script
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'get_suggestions.php?term=' + searchTerm, true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const suggestions = JSON.parse(xhr.responseText);
+      
+      // Clear existing suggestions
+      suggestionsDiv.innerHTML = '';
+      
+      // Create new list of suggestions
+      const ul = document.createElement('ul');
+      suggestions.forEach(function(suggestion) {
+        const li = document.createElement('li');
+        li.textContent = suggestion;
+        ul.appendChild(li);
+      });
+      
+      // Add list of suggestions to the suggestions div
+      suggestionsDiv.appendChild(ul);
+    } else {
+      console.log('Error: ' + xhr.status);
+    }
+  };
+  xhr.send();
+});
