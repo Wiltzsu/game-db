@@ -90,9 +90,9 @@ error_reporting(E_ALL);
 
             <!-- Modal -->
             <div class="modal fade" id="newgame" tabindex="-1" aria-labelledby="newgameLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                  <div class="modal-header">
+              <div class="modal-dialog modal-dialog-centered modal-ll">
+                <div class="modal-content border-dark">
+                  <div class="modal-header bg-primary ">
                     <h1 class="modal-title fs-5" id="newgameLabelLabel">Add a new game</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -100,7 +100,7 @@ error_reporting(E_ALL);
                     <?php include "newgame.php" ?>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -112,30 +112,32 @@ error_reporting(E_ALL);
           <div class="orangecontainer3 p-4">
           <h5 class="card-title">Discover your next game</h5>
           <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
-
+          </p>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
 
-              <!-- Modal -->
-              <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="randomgameLabel">Random game</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <table class="table table-striped" id="random-game-table">
+<!-- Modal -->
+<div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-l">
+    <div class="modal-content border border-dark">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="randomgameLabel">Random game for you</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="text-dark text-center" id="random-game-table">
 
-                    </table>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </p>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="updateGameTable()">Nah... another one</button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
           </div>
         </div>
     </div>

@@ -20,21 +20,35 @@ $(document).ready(function() {
     
   });
 
-// Function to get a random game
-function getRandomGame() {
-    var xmlhttp = new XMLHttpRequest();
+// Function to update the game suggestion
+function updateGameTable() {
+  var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        var randomGame = JSON.parse(this.responseText);
-        var table = document.getElementById("random-game-table");
-        table.innerHTML = "<tr><td>" + randomGame.Title + "</td><td>" + randomGame.Release + "</td><td>" + randomGame.Developers + "</td><td>" + randomGame.Platform + "</td></tr>";
-        }
-    };
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var randomGame = JSON.parse(this.responseText);
+      var table = document.getElementById("random-game-table");
+      table.innerHTML = "We would suggest you play " + "<strong>" + randomGame.Title + "</strong>" + 
+        " which releases on " + "<strong>" + randomGame.Release + "</strong>" +
+        ". It's developed by " + "<strong>" + randomGame.Developers + "</strong>" +
+        " and playable on " + "<strong>" + randomGame.Platform + ".</strong>";
+    }
+  };
 
-    xmlhttp.open("GET", "getrandomgame.php", true);
-    xmlhttp.send();
+  xmlhttp.open("GET", "getrandomgame.php", true);
+  xmlhttp.send();
 }
+
+// Function to get a random game and update the modal
+function getRandomGame() {
+  updateGameTable();
+}
+
+// Call the update function when the modal is opened
+$('#randomgame').on('shown.bs.modal', function() {
+  updateGameTable();
+});
+
 
 // Input suggestions in admin panel
 
