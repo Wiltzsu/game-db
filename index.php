@@ -116,7 +116,7 @@ error_reporting(E_ALL);
                 <div class="modal-content border border-dark">
                   <div class="modal-header bg-dark">
                     <h1 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <table class="text-dark text-center" id="random-game-table">
@@ -125,7 +125,6 @@ error_reporting(E_ALL);
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="updateGameTable()">Nah... another one</button>
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
