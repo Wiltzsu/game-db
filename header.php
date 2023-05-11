@@ -46,16 +46,10 @@ error_reporting(E_ALL);
   </head>
 
 <body>
-<div class="container tableborders">
-    <div class="row">
-        <div class="col-sm-12 purplecontainer ">
-        <?php if(isset($_GET['success'])): ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-          Your new game has been submitted succesfully and sent to be reviewed, thank you for contributing!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <div class="container tableborders">
+      <div class="row">
+          <div class="col-sm-12 purplecontainer ">
+          <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
           </div>
-        <?php endif; ?>  
-        <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
-        </div>
-    </div>
-</div>
+      </div>
+  </div>

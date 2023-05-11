@@ -49,26 +49,27 @@ error_reporting(E_ALL);
 <div class="container tableborders">
     <div class="row">
         <div class="col-sm-12 purplecontainer ">
-        <?php if(isset($_GET['success'])): ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-          Your new game has been submitted succesfully and sent to be reviewed, thank you for contributing!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        <?php endif; ?>  
         <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
         </div>
     </div>
 
-    <div class="row pl-3" style="background-color:black">
+
+</div>
+
+
+  <div class="container transpcontainer">
+  <div class="row pl-3" style="background-color:black">
       <!-- Checks if session is active and shows the control panel if it is -->
       <?php if(isset($_SESSION['adminemail'])) { ?>
             <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
           <?php } ?>
     </div>
-</div>
-
-
-  <div class="container transpcontainer">
+      <?php if(isset($_GET['success'])): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+          Your new game has been submitted succesfully and sent to be reviewed, thank you for contributing!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <?php endif; ?>  
     <div class="row d-flex justify-content-between">
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer1 p-4">
