@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 <!-- COMMENT TO TEST -->
-<!-- TEST CONFIRMATION -->
+<!-- Testing directory -->
 
 <!doctype html>
 <html lang="en">
@@ -116,28 +116,26 @@ error_reporting(E_ALL);
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
 
-<!-- Modal -->
-<div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-l">
-    <div class="modal-content border border-dark">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="randomgameLabel">Random game for you</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <table class="text-dark text-center" id="random-game-table">
+            <!-- Modal -->
+            <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-l">
+                <div class="modal-content border border-dark">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="randomgameLabel">Random game for you</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="text-dark text-center" id="random-game-table">
 
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="updateGameTable()">Nah... another one</button>
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="updateGameTable()">Nah... another one</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
