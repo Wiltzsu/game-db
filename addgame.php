@@ -6,7 +6,7 @@ if(!isset($_SESSION['adminemail'])){
     header("Location: login.php");
     exit;
   }?>
-?>
+
 
 <?php
 if(isset($_POST['save'])) {
