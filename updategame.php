@@ -1,16 +1,13 @@
-<?php
-require "connect.php";
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+<?php 
+session_start();
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
+require "header.php";
 ?>
-
-<?php
-
-?>
-
-<?php require "header.php" ?>
-
 
     <div class="container">
         <div class="row" style="background-color:black">
