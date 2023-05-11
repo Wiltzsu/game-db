@@ -5,8 +5,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-<!-- COMMENT TO TEST -->
-<!-- Testing directory -->
 
 <!doctype html>
 <html lang="en">
@@ -50,14 +48,14 @@ error_reporting(E_ALL);
 <body>
 <div class="container tableborders">
     <div class="row">
-        <div class="col-sm-12 purplecontainer pl-5 pr-5 pb-4">
+        <div class="col-sm-12 purplecontainer ">
         <?php if(isset($_GET['success'])): ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
           Your new game has been submitted succesfully and sent to be reviewed, thank you for contributing!
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>  
-        <img src="img/gamersout3.png" class="img-fluid" alt="Responsive image">
+        <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
         </div>
     </div>
 
@@ -67,7 +65,7 @@ error_reporting(E_ALL);
             <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
           <?php } ?>
     </div>
-  </div>
+</div>
 
 
   <div class="container transpcontainer">
@@ -150,7 +148,7 @@ error_reporting(E_ALL);
 
 <div class="container">
   <div class="row p-3">
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="display: flex; justify-content: left; align-items: center;">
       <h4>Upcoming releases</h4>
     </div>
     <div class="col-sm-4">
