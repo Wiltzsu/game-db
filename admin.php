@@ -9,17 +9,24 @@
 
     <div class="row text-center pb-3">
         <div class="col-sm-12">
+        <!-- Alert if game is added, gets the value from addgame.php -->
+        <?php if(isset($_GET['add'])) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Game added!</strong> Nice work.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
         <!-- Alert if game edit is successful, gets the value from updategame.php -->
         <?php if(isset($_GET['success'])) : ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Game edited!</strong> Nice admin work.
+                <strong>Game edited!</strong> Top tier admin.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
         <!-- Alert if game delete is successful, gets the value from updategame.php -->
         <?php if(isset($_GET['delete'])): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Game deleted!</strong> Good admin.
+                <strong>Game deleted!</strong> Good.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>

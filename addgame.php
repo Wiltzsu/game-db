@@ -1,4 +1,37 @@
-<?php require "header.php"?>
+
+<?php
+require "connect.php";
+?>
+
+
+<?php
+if(isset($_POST['save'])) {
+    $title=$_POST['title'];
+    $releasedate=$_POST['releasedate'];
+    $developer=$_POST['developer'];
+    $platform=$_POST['platform'];
+
+    $query="INSERT INTO games(title, releasedate, developer, platform)
+            VALUES(:title, :releasedate, :developer, :platform)";
+
+        $add = $yhteys->prepare($query);
+        $add->bindValue(':title', $title, PDO::PARAM_STR);
+        $add->bindValue(':releasedate', $releasedate, PDO::PARAM_STR);
+        $add->bindValue(':developer', $developer, PDO::PARAM_STR);
+        $add->bindValue(':platform', $platform, PDO::PARAM_STR);
+        $add->execute();
+        header('Location: admin.php?gameadd=true');
+}
+
+?>
+
+<?php 
+require "header.php";
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+?>
 
     <div class="container ">
         <div class="row" style="background-color:black">

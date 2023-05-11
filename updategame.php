@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "connect.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -7,144 +6,75 @@ error_reporting(E_ALL);
 ?>
 
 <?php
-try {
-    $title = $_GET['title'];
-
-    $query = "SELECT * FROM games WHERE title = '$title'";
-    $data = $yhteys->query($query);
-    $rows = $data->fetch(PDO::FETCH_OBJ);
-
-    if ($rows) {
-        $current_title = $rows->title;
-        $current_releasedate = $rows->releasedate;
-        $current_developer = $rows->developer;
-        $current_platform = $rows->platform;
-
-        if (isset($_POST['laheta'])) {
-            $new_title = $_POST['title'];
-            $new_releasedate = $_POST['releasedate'];
-            $new_developer = $_POST['developer'];
-            $new_platform = $_POST['platform'];
-
-            // Update values in database
-            $update = "UPDATE games
-            SET title = '$new_title', releasedate = '$new_releasedate', developer = '$new_developer', platform = '$new_platform'
-            WHERE title = '$title'";
- 
-            $yhteys->exec($update);
-            header('Location: admin.php?success=true');
-            exit();
-        } else if (isset($_POST['poista'])) {
-            $new_title = $_POST['title'];
-            $new_releasedate = $_POST['releasedate'];
-            $new_developer = $_POST['developer'];
-            $new_platform = $_POST['platform'];
-
-            // Delete from database
-            $delete = "DELETE FROM games WHERE title = '$title'";
-
-            $yhteys->exec($delete);
-            header('Location: admin.php?delete=true');
-            exit();
-        }
-    } else {
-        throw new Exception("<h4 style='color:red'>Could not find game</h4>");
-    }
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
 
 ?>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We are a community-driven website offering information about upcoming game releases on PC, Playstation 5, Playstation 4, Xbox Series X, Xbox One and Nintendo Switch.">
-    <meta name="keywords" content="upcoming games, PC games, Playstation 5, Playstation 4, Xbox Series X, Xbox One, Nintendo Switch">
-    <title>gamersOut - Game release dates</title>
-    <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Javascript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LczX54lAAAAAFbt65LDoTrH7ZBHqmJS60Z1mn9W"></script>
-    <script src="./javascript/javascript.js"></script>
-    <script src="./javascript/bootstrap.bundle.js"></script>
-    <script src="./javascript/bootstrap.min.js"></script>
+<?php require "header.php" ?>
 
-    <script>
-      function onSubmit(token) {
-        // Do something with the token, such as submitting the form data to your server
-        document.getElementById("myForm").submit();
-      }
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6LczX54lAAAAAFbt65LDoTrH7ZBHqmJS60Z1mn9W', {action: 'submit'}).then(function(token) {
-          // Add the token to your form data and submit the form
-          document.getElementById("myForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("token").value = token;
-            this.submit();
-          });
-        });
-      });
-    </script>
-  </head>
 
-<body>
-    <div class="container tableborders">
-        <div class="row">
-            <div class="col-sm-12 purplecontainer pl-5 pr-5 pb-4"> 
-            <img src="img/gamersout3.png" class="img-fluid" alt="Responsive image">
-            </div>
-        </div>
-
-        <div class="row pl-3" style="background-color:black">
-        <!-- Checks if session is active and shows the control panel if it is -->
-        <?php if(isset($_SESSION['adminemail'])) { ?>
-                <p><a href="editgame.php">Back to edit game</a> <a href="logout.php">Logout</a></p>
+    <div class="container">
+        <div class="row" style="background-color:black">
+            <!-- Checks if session is active and shows the control panel if it is -->
+            <?php if(isset($_SESSION['adminemail'])) { ?>
+                    <p><a href="editgame.php">Back to edit game</a> <a href="logout.php">Logout</a></p>
             <?php } ?>
         </div>
-    </div>
-
-
-    <div class="container p-5">
-        <div class="row mx-auto pb-3">
+        <div class="row mx-auto p-3">
             <div class="col-sm-12">
                 <?php
                 $error_message = '';
 
                 if (isset($_GET['title']) && empty($_GET['title'])) {
-                    $error_message = "<p style='color:red'>Input is empty</p>";
+                    $error_message = "<h4 style='color:red'>Input is empty</h4>";
                     echo $error_message;
                 } else {
                     try {
                         $title = $_GET['title'];
-                        $query = "SELECT * FROM games WHERE title LIKE '%$title%'";
+                    
+                        $query = "SELECT * FROM games WHERE title = '$title'";
                         $data = $yhteys->query($query);
                         $rows = $data->fetch(PDO::FETCH_OBJ);
+                    
                         if ($rows) {
                             $current_title = $rows->title;
                             $current_releasedate = $rows->releasedate;
                             $current_developer = $rows->developer;
                             $current_platform = $rows->platform;
+                    
+                            if (isset($_POST['laheta'])) {
+                                $new_title = $_POST['title'];
+                                $new_releasedate = $_POST['releasedate'];
+                                $new_developer = $_POST['developer'];
+                                $new_platform = $_POST['platform'];
+                    
+                                // Update values in database
+                                $update = "UPDATE games
+                                SET title = '$new_title', releasedate = '$new_releasedate', developer = '$new_developer', platform = '$new_platform'
+                                WHERE title = '$title'";
+                    
+                                $yhteys->exec($update);
+                                header('Location: admin.php?success=true');
+                                exit();
+                            } else if (isset($_POST['poista'])) {
+                                $new_title = $_POST['title'];
+                                $new_releasedate = $_POST['releasedate'];
+                                $new_developer = $_POST['developer'];
+                                $new_platform = $_POST['platform'];
+                    
+                                // Delete from database
+                                $delete = "DELETE FROM games WHERE title = '$title'";
+                    
+                                $yhteys->exec($delete);
+                                header('Location: admin.php?delete=true');
+                                exit();
+                            }
                         } else {
-                            $error_message = "<p style='color:red'>Title not found</p>";
-                            echo $error_message;
+                            throw new Exception("<h4 style='color:red'>Could not find game</h4>");
                         }
-                    } catch (PDOException $e) {
-                        $error_message = "<p style='color:red'>Error:</p> " . $e->getMessage();
-                        echo $error_message;
                     } catch (Exception $e) {
-                        $error_message = "<p style='color:red'>Error:</p> " . $e->getMessage();
-                        echo $error_message;
+                        echo $e->getMessage();
                     }
                 }
-
-
                 ?>
                 <!-- Edit game info -->
                 <h4>Edit result:</h4>    
@@ -189,6 +119,7 @@ try {
                     <button name="poista" type="submit" class="btn btn-danger mb2">Delete</button>
                 </form>
             </div>
+        </div>
         </div>
     </div>
 
