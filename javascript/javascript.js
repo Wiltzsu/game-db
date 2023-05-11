@@ -20,7 +20,7 @@ $(document).ready(function() {
     
   });
 
-// Function to update the game suggestions
+// Function to update the game suggestionsss
 function updateGameTable() {
   var xmlhttp = new XMLHttpRequest();
 
