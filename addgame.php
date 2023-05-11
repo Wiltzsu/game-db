@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 
 if(!isset($_SESSION['adminemail'])){
@@ -35,6 +36,9 @@ if(!isset($_SESSION['adminemail'])){
     exit;
   }
 ?>
+=======
+<?php require "header.php"?>
+>>>>>>> parent of 7bbd411 (fixed admin panel buttons not working)
 
 <!doctype html>
 <html lang="en">
