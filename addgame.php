@@ -1,6 +1,7 @@
 
 <?php
 require "connect.php";
+require "header.php";
 ?>
 
 
@@ -26,7 +27,6 @@ if(isset($_POST['save'])) {
 ?>
 
 <?php 
-require "header.php";
 if(!isset($_SESSION['adminemail'])){
     header("Location: login.php");
     exit;
