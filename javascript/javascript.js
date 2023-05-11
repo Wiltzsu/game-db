@@ -31,7 +31,7 @@ function updateGameTable() {
       table.innerHTML = "We would suggest you play " + "<strong>" + randomGame.Title + "</strong>" + 
         " which releases on " + "<strong>" + randomGame.Release + "</strong>" +
         ". It's developed by " + "<strong>" + randomGame.Developers + "</strong>" +
-        " and playable on " + "<strong>" + randomGame.Platform + ".</strong>";
+        " and is playable on " + "<strong>" + randomGame.Platform + ".</strong>";
     }
   };
 
