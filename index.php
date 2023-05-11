@@ -6,6 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 <!-- COMMENT TO TEST -->
+<!-- TEST CONFIRMATION -->
 
 <!doctype html>
 <html lang="en">
