@@ -58,11 +58,4 @@ error_reporting(E_ALL);
         <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
         </div>
     </div>
-
-    <div class="row pl-3" style="background-color:black">
-      <!-- Checks if session is active and shows the control panel if it is -->
-      <?php if(isset($_SESSION['adminemail'])) { ?>
-            <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
-          <?php } ?>
-    </div>
 </div>
