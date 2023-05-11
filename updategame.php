@@ -1,14 +1,3 @@
-<?php
-require "connect.php";
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
-
-<?php
-
-?>
-
 <?php 
 require "header.php";
 
@@ -18,7 +7,6 @@ if(!isset($_SESSION['adminemail'])){
   }
 
 ?>
-
 
     <div class="container">
         <div class="row" style="background-color:black">
