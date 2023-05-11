@@ -97,7 +97,7 @@ try {
         <div class="row pl-3" style="background-color:black">
         <!-- Checks if session is active and shows the control panel if it is -->
         <?php if(isset($_SESSION['adminemail'])) { ?>
-                <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
+                <p><a href="useraddedgames.php">USER GAMES</a> - <a href="logout.php">LOGOUT</a></p>
             <?php } ?>
         </div>
     </div>

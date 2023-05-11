@@ -46,19 +46,17 @@ error_reporting(E_ALL);
   </head>
 
 <body>
-<div class="container tableborders">
-    <div class="row">
-        <div class="col-sm-12 purplecontainer ">
-        <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
-        </div>
-    </div>
-
-
-</div>
+  <div class="container tableborders">
+      <div class="row">
+          <div class="col-sm-12 purplecontainer ">
+          <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
+          </div>
+      </div>
+  </div>
 
 
   <div class="container transpcontainer">
-  <div class="row pl-3" style="background-color:black">
+    <div class="row pl-3" style="background-color:black">
       <!-- Checks if session is active and shows the control panel if it is -->
       <?php if(isset($_SESSION['adminemail'])) { ?>
             <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
@@ -91,15 +89,12 @@ error_reporting(E_ALL);
             <div class="modal fade" id="newgame" tabindex="-1" aria-labelledby="newgameLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-ll">
                 <div class="modal-content border-dark">
-                  <div class="modal-header bg-primary ">
-                    <h1 class="modal-title fs-5" id="newgameLabelLabel">Add a new game</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-header bg-dark ">
+                    <h1 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <?php include "newgame.php" ?>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -119,8 +114,8 @@ error_reporting(E_ALL);
             <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-l">
                 <div class="modal-content border border-dark">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="randomgameLabel">Random game for you</h1>
+                  <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">

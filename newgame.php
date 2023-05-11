@@ -29,7 +29,7 @@ if(isset($_POST['add'])) {
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 bg-white">
             <table class="table" style="color:black">
                 <form action="index.php" method="POST" id="myForm">
                     <tr>
@@ -50,12 +50,14 @@ if(isset($_POST['add'])) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td><button class="g-recaptcha btn btn-primary" 
+                        <td>
+                            <button class="g-recaptcha btn btn-primary" 
                             name="add"
                             type="submit"
                             data-sitekey="6LczX54lAAAAAFbt65LDoTrH7ZBHqmJS60Z1mn9W" 
                             data-callback='onSubmit' 
-                            data-action='submit'>Submit</button></td>
+                            data-action='submit'>Submit</button>
+                        </td>
                     </tr>
                 </form>
             </table>            

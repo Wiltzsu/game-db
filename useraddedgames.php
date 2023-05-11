@@ -45,21 +45,11 @@
                                 <td class="col-3"> <?php echo $game['Release']; ?></td>
                                 <td class="col-3"> <?php echo $game['Developers']; ?></td>
                                 <td class="col-3"> <?php echo $game['Platform']; ?></td>
-                        
+                                <td><?php echo '<a href="approve.php?usergameid='.$game['usergameid'].'" class="btn btn-success">Approve</a>'; ?></td>
+                                <td><?php echo '<a href="editapproval.php?usergameid='.$game['usergameid'].'" class="btn btn-warning">Edit</a>'; ?></td>
+                                <td><?php echo '<a href="deletegame.php?usergameid='.$game['usergameid'].'" class="btn btn-danger">Delete</a>'; ?></td>
                             </tr>
-                            <tr>
-                                <!-- Browser sends a GET request to approve.php with jasenid of jasen as query parameter -->
-                                <td class="col-"><?php echo '<a href=approve.php?usergameid='.$game['usergameid'].'" class="btn btn-success ">Approve</a'; ?></td>
-                                <!-- Browser sends a GET request to paivitaJasen.php with jasenid of jasen as query parameter -->
-                                <td class="col-">
-                                <?php echo '<a href=editapproval.php?usergameid='.$game['usergameid'].'" class="btn btn-warning">Edit</a'; ?></td>                   
-                                <!-- Browser sends a GET request to poistaJasen.php with email address of jasen as query parameter -->
-                                <td class="col-"><?php echo '<a href="deletegame.php?usergameid='.$game['usergameid'].'" class="btn btn-danger">Delete</a>'; ?></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+
                                 <?php
                             }
                         }
