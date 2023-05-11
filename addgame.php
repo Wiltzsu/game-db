@@ -1,3 +1,14 @@
+<?php 
+session_start();
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
+require "header.php";
+?>
+
 <?php
 if(isset($_POST['save'])) {
     $title=$_POST['title'];
@@ -16,17 +27,6 @@ if(isset($_POST['save'])) {
         $add->execute();
         header('Location: admin.php?gameadd=true');
 }
-?>
-
-<?php 
-session_start();
-
-if(!isset($_SESSION['adminemail'])){
-    header("Location: login.php");
-    exit;
-  }
-
-require "header.php";
 ?>
 
     <div class="container ">
