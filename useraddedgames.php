@@ -1,4 +1,12 @@
-<?php require "header.php"?>
+<?php 
+require "header.php";
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
+?>
 
     <div class="container">
         <div class="row pl-3" style="background-color:black">

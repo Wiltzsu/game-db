@@ -9,7 +9,15 @@ error_reporting(E_ALL);
 
 ?>
 
-<?php require "header.php" ?>
+<?php 
+require "header.php";
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
+?>
 
 
     <div class="container">

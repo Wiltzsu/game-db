@@ -1,4 +1,12 @@
-<?php require "header.php"?>
+<?php 
+require "header.php";
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
+?>
 
 
 <div class="container">
@@ -10,7 +18,7 @@
     <div class="row text-center pb-3">
         <div class="col-sm-12">
         <!-- Alert if game is added, gets the value from addgame.php -->
-        <?php if(isset($_GET['add'])) : ?>
+        <?php if(isset($_GET['gameadd'])) : ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Game added!</strong> Nice work.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

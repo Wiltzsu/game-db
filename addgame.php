@@ -1,7 +1,11 @@
-
-<?php
-require "connect.php";
+<?php 
 require "header.php";
+
+if(!isset($_SESSION['adminemail'])){
+    header("Location: login.php");
+    exit;
+  }
+
 ?>
 
 
@@ -24,13 +28,6 @@ if(isset($_POST['save'])) {
         header('Location: admin.php?gameadd=true');
 }
 
-?>
-
-<?php 
-if(!isset($_SESSION['adminemail'])){
-    header("Location: login.php");
-    exit;
-  }
 ?>
 
     <div class="container ">
