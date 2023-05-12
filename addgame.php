@@ -1,13 +1,12 @@
 <?php 
 session_start();
-
 if(!isset($_SESSION['adminemail'])){
     header("Location: login.php");
     exit;
-  }
-
-require "header.php";
+}
 ?>
+
+<?php require "header.php"; ?>
 
 <?php
 if(isset($_POST['save'])) {
@@ -15,10 +14,8 @@ if(isset($_POST['save'])) {
     $releasedate=$_POST['releasedate'];
     $developer=$_POST['developer'];
     $platform=$_POST['platform'];
-
     $query="INSERT INTO games(title, releasedate, developer, platform)
             VALUES(:title, :releasedate, :developer, :platform)";
-
         $add = $yhteys->prepare($query);
         $add->bindValue(':title', $title, PDO::PARAM_STR);
         $add->bindValue(':releasedate', $releasedate, PDO::PARAM_STR);
@@ -26,9 +23,7 @@ if(isset($_POST['save'])) {
         $add->bindValue(':platform', $platform, PDO::PARAM_STR);
         $add->execute();
         header('Location: admin.php?gameadd=true');
-}
-?>
-
+}?>
     <div class="container ">
         <div class="row" style="background-color:black">
             <!-- Checks if session is active and shows the control panel if it is -->

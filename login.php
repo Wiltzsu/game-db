@@ -18,6 +18,7 @@ require "connect.php";
     <script src="javascript/bootstrap.bundle.js"></script>
     <title>Gamersout</title>
   </head>
+
 <body>
 <div class="container tableborders">
     <div class="row">
@@ -36,6 +37,7 @@ require "connect.php";
                 $kirjaudu = $yhteys->prepare("SELECT * FROM users WHERE email = ?");
                 $kirjaudu->execute([$email]);
                 $user = $kirjaudu->fetch(PDO::FETCH_ASSOC);
+
                 if ($user) {
                     if (password_verify($passwd, $user['passwd'])) {
                         $_SESSION['adminemail'] = $user['email'];
