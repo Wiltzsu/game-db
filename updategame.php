@@ -60,7 +60,7 @@ require "header.php";
                                 $delete = "DELETE FROM games WHERE title = '$title'";
                     
                                 $yhteys->exec($delete);
-                                header('Location: admin.php?delete=true');
+                                echo "<script>window.location.replace('admin.php?delete=true');</script>";
                                 exit();
                             }
                         } else {

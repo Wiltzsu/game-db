@@ -56,7 +56,7 @@ try {
             $yhteys->exec($kysely);
 
             // Redirect to index.php
-            header('Location: useraddedgames.php?usergameedited=true');
+            echo "<script>window.location.replace('admin.php?usergameedited=true');</script>";
             exit();
         }
     } else {

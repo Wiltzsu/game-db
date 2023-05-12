@@ -16,7 +16,6 @@ require "header.php";
     </div>
 
     <div class="row text-center pb-3">
-        <div class="col-sm-12">
         <!-- Alert if game is added, gets the value from addgame.php -->
         <?php if(isset($_GET['gameadd'])) : ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -53,12 +52,10 @@ require "header.php";
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
-            <h2><strong>ADMIN PANEL</strong></h2>
-        </div>
-
     </div>
 
     <div class="row text-center pb-3 pt-3">
+        <h2><strong>ADMIN PANEL</strong></h2>
         <div class="col-sm-4">
             <p><a class="btn btn-danger btn-lg" href="addgame.php">Add game</a></p>
         </div>

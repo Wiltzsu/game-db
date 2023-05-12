@@ -20,7 +20,7 @@ if(isset($_POST['add'])) {
         $add->bindValue(':developer', $developer, PDO::PARAM_STR);
         $add->bindValue(':platform', $platform, PDO::PARAM_STR);
         $add->execute();
-        header("Location: index.php?success=true");
+        echo "<script>window.location.replace('admin.php?success=true');</script>";
         exit();
 }
 ?>

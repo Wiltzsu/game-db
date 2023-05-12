@@ -20,8 +20,8 @@ if(isset($_POST['save'])) {
         $add->bindValue(':developer', $developer, PDO::PARAM_STR);
         $add->bindValue(':platform', $platform, PDO::PARAM_STR);
         $add->execute();
-        header('Location: admin.php?gameadd=true');
-}?>
+        echo "<script>window.location.replace('admin.php?gameadd=true');</script>";
+    }?>
     <div class="container ">
         <div class="row" style="background-color:black">
             <!-- Checks if session is active and shows the control panel if it is -->
