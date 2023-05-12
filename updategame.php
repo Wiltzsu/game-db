@@ -48,7 +48,7 @@ require "header.php";
                                 WHERE title = '$title'";
                     
                                 $yhteys->exec($update);
-                                header('Location: admin.php?success=true');
+                                echo "<script>window.location.replace('admin.php?success=true');</script>";
                                 exit();
                             } else if (isset($_POST['poista'])) {
                                 $new_title = $_POST['title'];
@@ -60,7 +60,7 @@ require "header.php";
                                 $delete = "DELETE FROM games WHERE title = '$title'";
                     
                                 $yhteys->exec($delete);
-                                echo "<script>window.location.replace('admin.php?gameupdate=true');</script>";
+                                header('Location: admin.php?delete=true');
                                 exit();
                             }
                         } else {
