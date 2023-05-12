@@ -24,7 +24,5 @@ if(isset($_GET['usergameid'])) {
     $del->bindValue(':usergameid', $usergameid, PDO::PARAM_STR);
     $del->execute();
 }
-
 echo "<script>window.location.replace('admin.php?usergameadded=true');</script>";
-
 ?>

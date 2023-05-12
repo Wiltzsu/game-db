@@ -16,7 +16,5 @@ else if(isset($_POST['usergameid'])) {
     $poista->bindValue(':usergameid', $usergameid, PDO::PARAM_STR);
     $poista->execute();
 }
-
 echo "<script>window.location.replace('admin.php?usergamedeleted=true');</script>";
-
 ?>
