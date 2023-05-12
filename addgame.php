@@ -1,13 +1,11 @@
-<?php 
+<?php
 session_start();
 if(!isset($_SESSION['adminemail'])){
     header("Location: login.php");
     exit;
 }
 ?>
-
 <?php require "header.php"; ?>
-
 <?php
 if(isset($_POST['save'])) {
     $title=$_POST['title'];
