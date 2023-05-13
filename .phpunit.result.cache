@@ -1,0 +1,1 @@
+{"version":1,"defects":{"GameReleaseTest::testHomePage":7,"MyTest::testHomePage":7,"MyTest::testSearchByTitle":7,"Tests\\DatabaseTest::testDatabaseConnection":5,"Tests\\DatabaseTest::testDatabaseContents":5},"times":{"GameReleaseTest::testHomePage":0.018,"MyTest::testHomePage":0.017,"MyTest::testSearchByTitle":0.021,"HomePageTest::testHomePage":0.014}}
