@@ -60,16 +60,18 @@ error_reporting(E_ALL);
   </head>
 
 <body>
-  <div class="container tableborders">
-      <div class="row">
-          <div class="col-sm-12 purplecontainer ">
-          <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
-          </div>
+<div class="container-fluid tableborders">
+  <div class="row">
+    <div class="col-sm-12 purplecontainer">
+      <div class="image-container">
+        <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
       </div>
+    </div>
   </div>
+</div>
 
 
-  <div class="container transpcontainer">
+  <div class="container-fluid transpcontainer">
     <div class="row pl-3" style="background-color:black">
       <!-- Checks if session is active and shows the control panel if it is -->
       <?php if(isset($_SESSION['adminemail'])) { ?>
@@ -149,14 +151,14 @@ error_reporting(E_ALL);
     </div>
   </div>
 
-  <div class="container mb-2">
+  <div class="container-fluid mb-2">
     <!-- Search results -->
     <div class="row ">
       <div id="search-results"></div>
     </div>
   </div>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row p-3">
     <div class="col-sm-8" style="display: flex; justify-content: left; align-items: center;">
       <h1>Upcoming releases</h1>
@@ -264,7 +266,7 @@ error_reporting(E_ALL);
 
 </div>
 
-<div class="container tableborders">
+<div class="container-fluid tableborders">
     <div class="row">
         <div class="col-sm-12 purplecontainer text-center">
           <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">
