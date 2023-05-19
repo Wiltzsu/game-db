@@ -73,14 +73,14 @@ error_reporting(E_ALL);
     <div class="row d-flex justify-content-between">
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer1 p-4">
-          <h5 class="card-title">Welcome to gamersOut!</h5>
+          <h4 class="card-title">Welcome to gamersOut!</h4>
           <p class="card-text">We are a community-driven website offering information about upcoming game releases on PC, Playstation 5, Playstation 4, Xbox Series X, Xbox One and Nintendo Switch.</p>
           </div>
         </div>
 
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer2 p-4">
-          <h5 class="card-title">Add a game</h5>
+          <h4 class="card-title">Add a game</h4>
           <p class="card-text">If you know about an upcoming game release that we haven't covered yet, you can suggest it to us!</p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newgame">
@@ -92,7 +92,7 @@ error_reporting(E_ALL);
               <div class="modal-dialog modal-dialog-centered modal-ll">
                 <div class="modal-content border-dark">
                   <div class="modal-header bg-dark ">
-                    <h5 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h5>
+                    <h3 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h3>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -106,7 +106,7 @@ error_reporting(E_ALL);
 
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer3 p-4">
-          <h5 class="card-title">Discover your next game</h5>
+          <h4 class="card-title">Discover your next game</h4>
           <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
