@@ -73,7 +73,7 @@ error_reporting(E_ALL);
   </head>
 
 <body>
-  <div class="container tableborders">
+  <div class="container-fluid tableborders">
       <div class="row">
           <div class="col-sm-12 purplecontainer ">
           <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">

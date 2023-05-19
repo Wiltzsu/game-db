@@ -1,6 +1,6 @@
 <?php require "connect.php"?>
 
-<div class="container tableborders">
+<div class="container-fluid tableborders">
     <div class="row">
         <div class="col-sm-12 purplecontainer text-center">
           <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">
