@@ -12,9 +12,9 @@ error_reporting(E_ALL);
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We are a community-driven website offering information about upcoming game releases on PC, Playstation 5, Playstation 4, Xbox Series X, Xbox One and Nintendo Switch.">
+    <meta name="description" content="We provide gamers information on upcoming game release dates for PC, PlayStation (5 & 4), Xbox (Series X & One), and Nintendo Switch">
     <meta name="keywords" content="upcoming games, PC games, Playstation 5, Playstation 4, Xbox Series X, Xbox One, Nintendo Switch">
-    <title>gamersOut - Game release dates</title>
+    <title>gamersOut - Your comprehensive source for game release dates</title>
     <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
@@ -62,12 +62,14 @@ error_reporting(E_ALL);
             <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
           <?php } ?>
     </div>
+
       <?php if(isset($_GET['success'])): ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
           Your new game has been submitted succesfully and sent to be reviewed, thank you for contributing!
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>  
+
     <div class="row d-flex justify-content-between">
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer1 p-4">
@@ -90,7 +92,7 @@ error_reporting(E_ALL);
               <div class="modal-dialog modal-dialog-centered modal-ll">
                 <div class="modal-content border-dark">
                   <div class="modal-header bg-dark ">
-                    <h1 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h1>
+                    <h5 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -106,7 +108,6 @@ error_reporting(E_ALL);
           <div class="orangecontainer3 p-4">
           <h5 class="card-title">Discover your next game</h5>
           <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
-          </p>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
 
@@ -115,7 +116,7 @@ error_reporting(E_ALL);
               <div class="modal-dialog modal-dialog-centered modal-l">
                 <div class="modal-content border border-dark">
                   <div class="modal-header bg-dark">
-                    <h1 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h1>
+                    <h5 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -144,9 +145,9 @@ error_reporting(E_ALL);
 <div class="container">
   <div class="row p-3">
     <div class="col-sm-8" style="display: flex; justify-content: left; align-items: center;">
-      <h4>Upcoming releases</h4>
+      <h1>Upcoming releases</h1>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="display: flex; justify-content: left; align-items: center;">
       <form id="search-form">
         <div class="input-group">
           <input type="text" name="title" class="form-control" placeholder="Search by title">
