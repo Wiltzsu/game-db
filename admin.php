@@ -9,7 +9,7 @@ if(!isset($_SESSION['adminemail'])){
 require "header.php";
 ?>
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="row" style="background-color:black">
         <p><a href="index.php">FRONT PAGE</a> - <a href="logout.php">LOGOUT</a></p>
