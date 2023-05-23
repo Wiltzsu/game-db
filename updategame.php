@@ -47,10 +47,17 @@ error_reporting(E_ALL);
                     
                                 // Update values in database
                                 $update = "UPDATE games
-                                SET title = '$new_title', releasedate = '$new_releasedate', developer = '$new_developer', platform = '$new_platform'
-                                WHERE title = '$title'";
-                    
-                                $yhteys->exec($update);
+                                SET title = :new_title, releasedate = :new_releasedate, developer = :new_developer, platform = :new_platform
+                                WHERE title = :title";
+             
+                     $updateStatement = $yhteys->prepare($update);
+                     $updateStatement->bindParam(':new_title', $new_title);
+                     $updateStatement->bindParam(':new_releasedate', $new_releasedate);
+                     $updateStatement->bindParam(':new_developer', $new_developer);
+                     $updateStatement->bindParam(':new_platform', $new_platform);
+                     $updateStatement->bindParam(':title', $title);
+             
+                     $updateStatement->execute();
                                 echo "<script>window.location.replace('admin.php?success=true');</script>";
                                 exit();
                             } else if (isset($_POST['poista'])) {
