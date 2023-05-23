@@ -75,8 +75,8 @@ error_reporting(E_ALL);
 <body>
   <div class="container-fluid tableborders">
       <div class="row">
-          <div class="col-sm-12 purplecontainer ">
-          <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
+          <div class="col-sm-12 purplecontainer text-center">
+          <img src="img/gamersout3 (2).png" class="img-fluid" alt="Responsive image">
           </div>
       </div>
   </div>

@@ -60,19 +60,22 @@ error_reporting(E_ALL);
   </head>
 
 <body>
-<div class="container-fluid tableborders">
-  <div class="row">
-    <div class="col-sm-12 purplecontainer">
-      <div class="image-container">
-        <img src="img/gamersout3 (1).png" class="img-fluid" alt="Responsive image">
-      </div>
-    </div>
+
+<!-- Image and text -->
+
+<nav class="navbar navbar-light bg-dark ">
+  <div class="mx-auto">
+    <a class="navbar-brand" href="index.php" style="display: flex; justify-content: center; align-items: center;">
+      <img src="img/gamersout2.png" width="40" height="40" class="d-inline-block align-top mx-auto" alt="">
+      <span class="ml-2"></span>
+    </a>
   </div>
-</div>
+</nav>
 
 
-  <div class="container-fluid transpcontainer">
-    <div class="row pl-3" style="background-color:black">
+
+  <div class="container-fluid transpcontainer pt-3">
+    <div class="row pl-3 bg-transparent">
       <!-- Checks if session is active and shows the control panel if it is -->
       <?php if(isset($_SESSION['adminemail'])) { ?>
             <p><a href="admin.php">ADMIN PANEL</a> - <a href="logout.php">LOGOUT</a></p>
@@ -89,21 +92,21 @@ error_reporting(E_ALL);
     <div class="row d-flex justify-content-between">
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer1 p-4">
-          <h4 class="card-title">Welcome to gamersOut!</h4>
-          <p class="card-text">Are you a passionate gamer eagerly anticipating the release of the latest games? Look no further! Welcome to gamersOut, your one-stop destination for up-to-date information on upcoming game release dates across various platforms. Whether you play on PC, PlayStation (5 & 4), Xbox (Series X & One), or Nintendo Switch, we've got you covered. <br><br>At gamersOut, we understand the excitement and anticipation that comes with the announcement of new game releases. Our mission is to provide gamers like you with the a comprehensive source of information about upcoming games.</p>
+          <h2 class="card-title mb-3"><strong>Welcome to gamersOut!</strong></h2>
+          <p class="card-text">Are you a passionate gamer eagerly anticipating the release of the latest games? Look no further! Welcome to gamersOut, your one-stop destination for up-to-date information on upcoming game release dates across various platforms. Whether you play on PC, PlayStation (5 & 4), Xbox (Series X & One), or Nintendo Switch, we've got you covered. <br><br>Our website is designed to be user-friendly and intuitive, allowing you to easily navigate through the information we have to offer. The centerpiece of our platform is our extensive database of upcoming games. </p>
           </div>
         </div>
 
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer2 p-4">
-          <h4 class="card-title">Who are we?</h4>
-          <p class="card-text">Our website is designed to be user-friendly and intuitive, allowing you to easily navigate through the information we have to offer. The centerpiece of our platform is our extensive database of upcoming games. <br><br>From highly anticipated AAA titles to indie gems, we cover a wide range of games across genres, ensuring that there's something for every type of gamer. Whether you're a fan of action, adventure, role-playing, sports, or strategy games, gamersOut is your go-to resource. Get ready to level up your gaming knowledge and never miss a game release again. gamersOut has got your back!</p>
+          <h2 class="card-title mb-3"><strong>Our Mission</strong></h2>
+          <p class="card-text">At gamersOut, we understand the excitement and anticipation that comes with the announcement of new game releases. Our mission is to provide gamers like you with a comprehensive source of information about upcoming games. <br><br>From highly anticipated AAA titles to indie gems, we cover a wide range of games across genres, ensuring that there's something for every type of gamer. Whether you're a fan of action, adventure, role-playing, sports, or strategy games, gamersOut is your go-to resource. Get ready to level up your gaming knowledge and never miss a game release again. gamersOut has got your back!</p>
           </div>
         </div>
 
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer3 p-4">
-          <h4 class="card-title">Discover your next game</h4>
+          <h4 class="card-title mb-2">Discover your next game</h4>
           <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
@@ -112,8 +115,8 @@ error_reporting(E_ALL);
             <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-l">
                 <div class="modal-content border border-dark">
-                  <div class="modal-header bg-dark">
-                    <h5 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h5>
+                  <div class="modal-header bg-primary">
+                    
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -127,7 +130,7 @@ error_reporting(E_ALL);
                 </div>
               </div>
             </div>
-            <h4 class="mt-3">Add a game to the database</h4>
+            <h4 class="mt-3 mb-2">Add a game to the database</h4>
             <p class="card-text">If you know about an upcoming game release that we haven't covered yet, you can suggest it to us!</p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newgame">
@@ -138,7 +141,7 @@ error_reporting(E_ALL);
             <div class="modal fade" id="newgame" tabindex="-1" aria-labelledby="newgameLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-ll">
                 <div class="modal-content border-dark">
-                  <div class="modal-header bg-dark ">
+                  <div class="modal-header bg-primary ">
                     <h3 class="modal-title fs-5 text-light" id="newgameLabelLabel">Add a new game</h3>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -153,6 +156,7 @@ error_reporting(E_ALL);
     </div>
   </div>
 
+
   <div class="container-fluid mb-2">
     <!-- Search results -->
     <div class="row ">
@@ -163,7 +167,7 @@ error_reporting(E_ALL);
 <div class="container-fluid">
   <div class="row p-3">
     <div class="col-sm-8" style="display: flex; justify-content: left; align-items: center;">
-      <h1>Upcoming game releases</h1>
+      <h1><strong>Upcoming game releases</strong></h1>
     </div>
     <div class="col-sm-4" style="display: flex; justify-content: left; align-items: center;">
       <form id="search-form">

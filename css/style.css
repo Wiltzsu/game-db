@@ -55,13 +55,13 @@ body {
 
 .orangecontainer1 {
     color: #ffffff;
-    background-color: #33006F;
+    background-color: #000000;
     border-radius: 10px 0px 0px 10px;
     font-family: 'Kanit', sans-serif;
     font-weight: 400!important;
-    border-bottom: 4px solid;
-    border-left: 4px solid;
-    animation: color-transition 10s infinite;
+    border-bottom: 4px solid #8a0b79;
+    border-left: 4px solid #4258bd;
+    /*animation: color-transition 10s infinite;*/
 }
 
 @keyframes color-transition {
@@ -82,7 +82,7 @@ color: black;
 
 .orangecontainer2 {
     color: rgb(255, 255, 255);
-    background-color: #33006F;
+    background-color: #000000;
     border-radius: 10px 10px 0px 0px;
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
@@ -90,7 +90,7 @@ color: black;
     border-left: 4px solid #4258bd;
     border-right: 4px solid #4258bd;
 
-    animation: color-transition2 10s infinite;
+    /*animation: color-transition2 10s infinite;*/
 }
 
 @keyframes color-transition2 {
@@ -106,17 +106,17 @@ color: black;
 }
 .orangecontainer3 {
     color: rgb(255, 255, 255);
-    background-color: #33006F;
+    background-color: #000000;
     border-radius: 0px 10px 10px 0px;
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
     border-bottom: 4px solid #8a0b79;
     border-right: 4px solid #4258bd;
-    animation: color-transition 10s infinite;
+    /*animation: color-transition 10s infinite;*/
 }
 
 .transpcontainer {
-    background-color: black;
+    background-color: rgb(66, 66, 66);
 }
 
 .tableborders {

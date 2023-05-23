@@ -40,12 +40,13 @@ require "connect.php";
 
 
 <body>
-<div class="container-fluid tableborders">
+<div class="container-fluid tableborders content-container">
     <div class="row">
-        <div class="col-sm-12 purplecontainer pl-5 pr-5 pb-4">
-          <img src="img/gamersout3.png" class="img-fluid" alt="Responsive image">
+        <div class="col-sm-12 purplecontainer pl-5 pr-5 pb-4 text-center">
+            <img src="img/gamersout3 (2).png" class="img-fluid" alt="Responsive image">
         </div>
     </div>
+
 <?php
            if (isset($_POST['submit'])) {
             $email = $_POST['email'];
