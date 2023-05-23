@@ -9,7 +9,7 @@ if(!isset($_SESSION['adminemail'])){
 require "header.php";
 ?>
 
-    <div class="container">
+    <div class="container-fluid content-container">
         <div class="row pl-3" style="background-color:black">
             <!-- Checks if session is active and shows the control panel if it is -->
             <?php if(isset($_SESSION['adminemail'])) { ?>
@@ -26,6 +26,7 @@ require "header.php";
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php endif; ?>
+            <div class="table-responsive">
                 <table class="table table-striped">
                 <tr>
                     <th class="col-4">Title</th>
@@ -65,25 +66,10 @@ require "header.php";
                     }
                     ?>
                 </table>
+                </div>
             </div>
         </div>
     </div>
 
     <!--FOOTER-->
-    <div class="container tableborders">
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center">
-            <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center" style="color: white">
-            <p>contact@gamersout.com</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center" style="color: white">
-            <p>Copyright 2022 © gamersout.com</p>
-            </div>
-        </div>
-    </div>
+<?php require "footer.php"?>

@@ -9,7 +9,7 @@ if(!isset($_SESSION['adminemail'])){
 require "header.php";
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid content-container">
 
     <div class="row" style="background-color:black">
         <p><a href="index.php">FRONT PAGE</a> - <a href="logout.php">LOGOUT</a></p>
@@ -55,23 +55,23 @@ require "header.php";
     </div>
 
     <div class="row text-center pb-3 pt-3">
-        <h2><strong>ADMIN PANEL</strong></h2>
+        <h2 class="mb-5"><strong>ADMIN PANEL</strong></h2>
         <div class="col-sm-4">
-            <p><a class="btn btn-danger btn-lg" href="addgame.php">Add game</a></p>
+            <p><a class="btn btn-primary btn-lg" href="addgame.php">Add game</a></p>
         </div>
         <div class="col-sm-4">
-            <p><a class="btn btn-danger btn-lg" href="editgame.php">Edit game</a></p>
+            <p><a class="btn btn-primary btn-lg" href="editgame.php">Edit game</a></p>
         </div>
         <div class="col-sm-4">
-            <p><a class="btn btn-danger btn-lg" href="useraddedgames.php">User added games</a></p>
+            <p><a class="btn btn-primary btn-lg" href="useraddedgames.php">User added games</a></p>
         </div>
     </div>
 
-    <div class="row text-center">
-        <div class="col-sm-12">
+    <!--<div class="row text-center">
+        <div class="col-sm-4">
         <img src="img/sieni-nobg.png" id="sieni" class="mx-auto">
         </div>
-    </div>
+    </div>-->
 </div>
 
 </div>

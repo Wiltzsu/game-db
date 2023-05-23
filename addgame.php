@@ -22,7 +22,7 @@ if(isset($_POST['save'])) {
         $add->execute();
         echo "<script>window.location.replace('admin.php?gameadd=true');</script>";
     }?>
-    <div class="container ">
+    <div class="container-fluid content-container">
         <div class="row" style="background-color:black">
             <!-- Checks if session is active and shows the control panel if it is -->
             <?php if(isset($_SESSION['adminemail'])) { ?>
@@ -61,23 +61,7 @@ if(isset($_POST['save'])) {
     </div>
 
     <!--FOOTER-->
-    <div class="container tableborders">
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center">
-            <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center" style="color: white">
-            <p>contact@gamersout.com</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 purplecontainer text-center" style="color: white">
-            <p>Copyright 2022 © gamersout.com</p>
-            </div>
-        </div>
-    </div>
+<?php require "footer.php"?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

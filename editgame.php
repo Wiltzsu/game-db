@@ -9,7 +9,7 @@ if(!isset($_SESSION['adminemail'])){
 require "header.php";
 ?>
 
-<div class="container">
+<div class="container-fluid content-container">
         <div class="row pl-3" style="background-color:black">
         <!-- Checks if session is active and shows the control panel if it is -->
         <?php if(isset($_SESSION['adminemail'])) { ?>
@@ -32,7 +32,7 @@ require "header.php";
 </div>
 
     <!--FOOTER-->
-    <div class="container tableborders">
+    <div class="container-fluid tableborders">
         <div class="row">
             <div class="col-sm-12 purplecontainer text-center">
             <img src="img/gamersout3.png" class="img-fluid footerimg" alt="Responsive image">

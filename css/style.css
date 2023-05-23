@@ -4,6 +4,13 @@ body {
     background-color: white;
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
 }
 
 .tabletext {
@@ -17,6 +24,11 @@ body {
 
 .container {
     background-color: rgb(233, 232, 233);
+}
+
+.content-container {
+
+  flex: 1;
 }
 
 .searchcontainer {

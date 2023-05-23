@@ -90,14 +90,45 @@ error_reporting(E_ALL);
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer1 p-4">
           <h4 class="card-title">Welcome to gamersOut!</h4>
-          <p class="card-text">We are a community-driven website offering information about upcoming game releases on PC, Playstation 5, Playstation 4, Xbox Series X, Xbox One and Nintendo Switch.</p>
+          <p class="card-text">Are you a passionate gamer eagerly anticipating the release of the latest games? Look no further! Welcome to gamersOut, your one-stop destination for up-to-date information on upcoming game release dates across various platforms. Whether you play on PC, PlayStation (5 & 4), Xbox (Series X & One), or Nintendo Switch, we've got you covered. <br><br>At gamersOut, we understand the excitement and anticipation that comes with the announcement of new game releases. Our mission is to provide gamers like you with the a comprehensive source of information about upcoming games.</p>
           </div>
         </div>
 
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
           <div class="orangecontainer2 p-4">
-          <h4 class="card-title">Add a game</h4>
-          <p class="card-text">If you know about an upcoming game release that we haven't covered yet, you can suggest it to us!</p>
+          <h4 class="card-title">Who are we?</h4>
+          <p class="card-text">Our website is designed to be user-friendly and intuitive, allowing you to easily navigate through the information we have to offer. The centerpiece of our platform is our extensive database of upcoming games. <br><br>From highly anticipated AAA titles to indie gems, we cover a wide range of games across genres, ensuring that there's something for every type of gamer. Whether you're a fan of action, adventure, role-playing, sports, or strategy games, gamersOut is your go-to resource. Get ready to level up your gaming knowledge and never miss a game release again. gamersOut has got your back!</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 d-flex align-items-stretch">
+          <div class="orangecontainer3 p-4">
+          <h4 class="card-title">Discover your next game</h4>
+          <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-l">
+                <div class="modal-content border border-dark">
+                  <div class="modal-header bg-dark">
+                    <h5 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="text-dark text-center mx-auto" id="random-game-table">
+
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="updateGameTable()">Another one</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="mt-3">Add a game to the database</h4>
+            <p class="card-text">If you know about an upcoming game release that we haven't covered yet, you can suggest it to us!</p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newgame">
               Add game
@@ -119,35 +150,6 @@ error_reporting(E_ALL);
             </div>
           </div>
         </div>
-
-        <div class="col-md-4 mb-3 d-flex align-items-stretch">
-          <div class="orangecontainer3 p-4">
-          <h4 class="card-title">Discover your next game</h4>
-          <p class="card-text">Don't know what to play next? Let destiny guide you! Click the button and try your luck.</p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomgame" onclick="getRandomGame()">Let's go</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="randomgame" tabindex="-1" aria-labelledby="randomgameLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-l">
-                <div class="modal-content border border-dark">
-                  <div class="modal-header bg-dark">
-                    <h5 class="modal-title fs-5 text-white" id="randomgameLabel">Random game for you</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <table class="text-dark text-center" id="random-game-table">
-
-                    </table>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="updateGameTable()">Nah... another one</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
     </div>
   </div>
 
@@ -161,7 +163,7 @@ error_reporting(E_ALL);
 <div class="container-fluid">
   <div class="row p-3">
     <div class="col-sm-8" style="display: flex; justify-content: left; align-items: center;">
-      <h1>Upcoming releases</h1>
+      <h1>Upcoming game releases</h1>
     </div>
     <div class="col-sm-4" style="display: flex; justify-content: left; align-items: center;">
       <form id="search-form">
