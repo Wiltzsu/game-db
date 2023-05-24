@@ -15,6 +15,7 @@ error_reporting(E_ALL);
     <meta name="keywords" content="upcoming games, PC games, Playstation 5, Playstation 4, Xbox Series X, Xbox One, Nintendo Switch">
     <title>gamersOut - Your comprehensive source for game release dates</title>
     <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
     <link rel="stylesheet" href="./css/style.css">

@@ -15,7 +15,8 @@ error_reporting(E_ALL);
     <meta name="description" content="We provide gamers information on upcoming game release dates for PC, PlayStation (5 & 4), Xbox (Series X & One), and Nintendo Switch">
     <meta name="keywords" content="upcoming games, PC games, Playstation 5, Playstation 4, Xbox Series X, Xbox One, Nintendo Switch">
     <title>gamersOut - Your comprehensive source for game release dates</title>
-    <link rel="icon" type="image/x-icon" href="img/gamersout2.png">
+    <link rel="icon" type="image/x-icon" href="img/gamersout2.png" alt="logo">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
     <link rel="stylesheet" href="./css/style.css">
@@ -66,7 +67,7 @@ error_reporting(E_ALL);
 <nav class="navbar navbar-light bg-dark ">
   <div class="mx-auto">
     <a class="navbar-brand" href="index.php" style="display: flex; justify-content: center; align-items: center;">
-      <img src="img/gamersout2.png" width="40" height="40" class="d-inline-block align-top mx-auto" alt="">
+      <img src="img/gamersout2.png" width="40" height="40" class="d-inline-block align-top mx-auto" alt="gamersOut">
       <span class="ml-2"></span>
     </a>
   </div>
