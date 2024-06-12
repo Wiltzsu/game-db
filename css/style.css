@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    background-color: rgb(233, 232, 233);
+    background-color: rgb(118, 41, 41);
 }
 
 .content-container {
@@ -53,70 +53,16 @@ body {
     height: 35px;
 }
 
-.orangecontainer1 {
-    color: #ffffff;
-    background-color: #000000;
+.headerContainer {
+    color: #000000;
+    background-color: #ffffff;
     border-radius: 10px 0px 0px 10px;
     font-family: 'Kanit', sans-serif;
     font-weight: 400!important;
-    border-bottom: 4px solid #8a0b79;
-    border-left: 4px solid #4258bd;
-    /*animation: color-transition 10s infinite;*/
-}
-
-@keyframes color-transition {
-    0% {
-      border-color: #5e0852;
-    }
-    50% {
-      border-color: #4258bd;
-    }
-    100% {
-      border-color: #5e0852;
-    }
 }
 
 .form-check-label {
 color: black;
-}
-
-.orangecontainer2 {
-    color: rgb(255, 255, 255);
-    background-color: #000000;
-    border-radius: 10px 10px 0px 0px;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
-    border-bottom: 4px solid #8a0b79;
-    border-left: 4px solid #4258bd;
-    border-right: 4px solid #4258bd;
-
-    /*animation: color-transition2 10s infinite;*/
-}
-
-@keyframes color-transition2 {
-    0% {
-      border-color: #4258bd;
-    }
-    50% {
-      border-color: #8a0b79;
-    }
-    100% {
-      border-color: #4258bd;
-    }
-}
-.orangecontainer3 {
-    color: rgb(255, 255, 255);
-    background-color: #000000;
-    border-radius: 0px 10px 10px 0px;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
-    border-bottom: 4px solid #8a0b79;
-    border-right: 4px solid #4258bd;
-    /*animation: color-transition 10s infinite;*/
-}
-
-.transpcontainer {
-    background-color: rgb(66, 66, 66);
 }
 
 .tableborders {

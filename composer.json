@@ -1,14 +1,19 @@
 {
-    "require-dev": {
-        "phpunit/phpunit": "^10.1",
-        "phpunit/dbunit": "^1.3"
-    },
-    "require": {
-        "guzzlehttp/guzzle": "^7.5"
-    },
-    "autoload-dev": {
+    "name": "william/game-db",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "App\\": "src/"
         }
+    },
+    "authors": [
+        {
+            "name": "Wiltzsu",
+            "email": "william.lonnberg@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.19"
     }
 }

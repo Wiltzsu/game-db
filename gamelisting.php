@@ -9,7 +9,7 @@ $start = ($page - 1) * $limit;
 # SQL query
 
 $query = "SELECT gameid, releasedate, title, developer, platform FROM games WHERE releasedate >= CURDATE() ORDER BY releasedate LIMIT $start, $limit";
-$data = $yhteys->query($query);
+$data = $db->query($query);
 
 # Save to JSON file
 $JSON='{"games":[';
