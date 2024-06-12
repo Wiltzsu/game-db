@@ -1,8 +1,12 @@
 <?php
+namespace App;
+
 require 'vendor/autoload.php'; // Include Composer's autoloader
 
+use MongoDB\Client;
+
 // Create a MongoDB client instance
-$client = new MongoDB\Client("mongodb://localhost:27017");
+$client = new Client("mongodb://localhost:27017");
 
 $db = $client->selectDatabase('game-db'); // Replace 'my_database' with your database name
 

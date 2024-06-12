@@ -13,6 +13,9 @@ switch($request)
     case '/login':
         require 'src/view/login.php';
         break;
+    case '/register':
+        require 'src/view/register.php';
+        break;
     case '/newgame':
         require 'src/view/newgame.php';
         break;
