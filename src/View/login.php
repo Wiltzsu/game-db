@@ -1,10 +1,8 @@
 <?php 
 session_start();
-require_once __DIR__ . '/../config/connect.php';
+require_once __DIR__ . '/../Config/connect.php';
 
 require_once 'header.php';
-
-require 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $collection = $db->users;

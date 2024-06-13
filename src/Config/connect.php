@@ -1,13 +1,28 @@
 <?php
 namespace App;
 
-require 'vendor/autoload.php'; // Include Composer's autoloader
+require __DIR__ . '/../../vendor/autoload.php'; // Include Composer's autoloader
 
 use MongoDB\Client;
+use Throwable;
 
-// Create a MongoDB client instance
-$client = new Client("mongodb://localhost:27017");
+class Database
+{
+    private static $db;
 
-$db = $client->selectDatabase('game-db'); // Replace 'my_database' with your database name
+    public static function connect()
+    {
+        if (!self::$db) {
+            try {
+                // Create a MongoDB client instance
+                $client = new Client("mongodb://localhost:27017");
 
-$collection = $db->selectCollection('games'); // Replace 'my_collection' with your collection name
+                // Select the database and store it in the static property
+                self::$db = $client->selectDatabase('game-db'); // Replace 'game-db' with your database name
+            } catch (Throwable $e) {
+                echo 'Connection failed: ' . $e->getMessage();
+            }
+        }
+        return self::$db;
+    }
+}
