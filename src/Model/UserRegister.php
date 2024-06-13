@@ -1,6 +1,4 @@
 <?php
-namespace App\Model;
-
 /**
  * File for user registration.
  * 
@@ -8,20 +6,41 @@ namespace App\Model;
  * @license MIT License
  */
 
+namespace App\Model;
+
 /**
  * User registration class containing methods.
+ * 
+ * @var $_db            Database connection variable.
+ * @var $_collection    Database collection variable.
  */
 class UserRegister
 {
     private $_db;
     private $_collection;
 
+    /**
+     * Initialize the class with a database connection.
+     * 
+     * @param $db MongoDB database connection.
+     */
     public function __construct(\MongoDB\Database $db)
     {
         $this->_db = $db;
         $this->_collection = $this->_db->users;
     }
 
+    /**
+     * Validates user input.
+     * Checks for input lengths, existing values and input type.
+     * 
+     * @param $username  Username.
+     * @param $email     Email.
+     * @param $password  Password.
+     * @param $password2 Re-enter password.
+     * 
+     * @return Array Returns array of errors.
+     */
     public function validateInput($username, $email, $password, $password2)
     {
         $errors = [];
@@ -47,6 +66,17 @@ class UserRegister
         return $errors;
     }
 
+    /**
+     * Validates input and inserts the user to the database.
+     * Converts 'userID' to a string to get standardized output.
+     * 
+     * @param $username  Username of the user.
+     * @param $email     Email of the user.
+     * @param $password  User password.
+     * @param $password2 Password re-enter.
+     * 
+     * @return Array Returns array with a 'success' key.
+     */
     public function registerUser($username, $email, $password, $password2)
     {
         $errors = $this->validateInput($username, $email, $password, $password2);
@@ -55,7 +85,10 @@ class UserRegister
         }
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $user = ['username' => $username, 'email' => $email, 'password' => $hashed_password];
+        $user = [
+            'username' => $username,
+            'email' => $email,
+            'password' => $hashed_password];
         $result = $this->_collection->insertOne($user);
         return ['success' => true, 'userId' => (string)$result->getInsertedId()];
     }
